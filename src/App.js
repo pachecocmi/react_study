@@ -5,11 +5,12 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import About from './components/pages/About'
 import Home from './components/pages/Home'
+import Product from './components/pages/Product'
 import Products from './components/pages/Products'
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="App relative pb-10 min-h-screen">
       <Router>
         <Header />
 
@@ -21,8 +22,11 @@ export default function App() {
             <Route path="/about">
               <About />
             </Route>
-            <Route path="/products/:id">
+            <Route path="/products">
               <Products />
+            </Route>
+            <Route path="/product/:id">
+              <Product />
             </Route>
           </Switch>
         </div>

@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+
+import Loader from '../Loader'
+import ProductCard from './ProductCard';
+import HttpRequests from '../../Hooks/HttpRequests';
 
 export default function Products() {
 
-    const url = "https://reqres.in/api/users/2"
-    const [product, setProduct] = useState(null)
-
-    let productInfo = ""
-    useEffect(()=>{
-        axios.get(url).then(response=>{
-            setProduct(response.data)
-        })
-    }, [url])
-
-    if( product ) 
-        productInfo = <div>{ product.name }</div>
+    const url = `https://reqres.in/api/users`;
+    
+    let products = HttpRequests(url)
+    
+    let content = products.error ? <div><p>Something Unexpected has Occured.</p></div> : <Loader />;
+    if( products.data ) 
+        content = products.data.map((product, key)=><ProductCard key={key} product={product} />)
 
     return (
         <div>
             <h1>Products</h1>
 
-            { productInfo }
+            <div className="flex w-full">
+                { content }
+            </div>
         </div>
     )
 }
