@@ -15,6 +15,7 @@ export default function NavMenu(props) {
             <ul>
                 <li><Link to="/" className={navClass} onClick={props.closeMenu}>Home</Link></li>
                 <li><Link to="/about" className={navClass} onClick={props.closeMenu}>About</Link></li>
+                <li><Link to="/products" className={navClass} onClick={props.closeMenu}>Products</Link></li>
             </ul>
         </div>
     )

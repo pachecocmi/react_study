@@ -1,8 +1,11 @@
 import React from 'react'
-import Header from './components/Header'
-import Body from './components/Body'
-import Footer from './components/Footer'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+import Header from './components/Header'
+import Footer from './components/Footer'
+import About from './components/pages/About'
+import Home from './components/pages/Home'
+import Products from './components/pages/Products'
 
 export default function App() {
   return (
@@ -10,20 +13,23 @@ export default function App() {
       <Router>
         <Header />
 
-        <Body />
-        
-        <Switch>
-          <Route exact path="/">
-            <h1>home</h1>
-          </Route>
-          <Route path="/about">
-            <h1>about</h1>
-          </Route>
-        </Switch>
+        <div className="p-3">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/products/:id">
+              <Products />
+            </Route>
+          </Switch>
+        </div>
   
         <Footer />
 
       </Router>
     </div>
-  );
+  )
 }
