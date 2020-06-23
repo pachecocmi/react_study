@@ -25,7 +25,7 @@ export default function App() {
             <Route path="/products">
               <Products />
             </Route>
-            <Route path="/products/:id">
+            <Route path="/product/:id">
               <Product />
             </Route>
           </Switch>

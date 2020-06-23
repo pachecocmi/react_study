@@ -7,22 +7,21 @@ import HttpRequests from '../../Hooks/HttpRequests';
 export default function Product() {
 
     const { id } = useParams()
-    const url = `https://reqres.in/api/users/${id}`
+    const url = `https://jsonplaceholder.typicode.com/photos/${id}`
 
     let product = HttpRequests(url)
+
+    console.log(product.data);
     
     let productInfo = product.error ? <div><p>Something Unexpected has Occured.</p></div> : <Loader />
-    if( product.data ) 
-        productInfo = <div>
-            <div><img src={ product.data.avatar } alt={ product.data.avatar } /></div>
-            <div>{ product.data.first_name } { product.data.last_name }</div>
-            <div>{ product.data.email }</div>
+    if( product.data??true == false ) 
+        productInfo = <div className="text-center">
+            <div><img src={ product.data.url } alt={ product.data.thumbnailUrl } className="m-auto"/></div>
+            <div>{ product.data.title }</div>
         </div>
 
     return (
         <div>
-            <h1>Products</h1>
-
             { productInfo }
         </div>
     )

@@ -13,7 +13,7 @@ export default function HttpRequests(url) {
         axios.get(url).then(response=>{
             setResult({
                 loading: true,
-                data: response.data.data
+                data: response.data
             })
         }).catch(error=>{
             setResult({ loading: false, error: true });

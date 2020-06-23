@@ -6,7 +6,8 @@ import HttpRequests from '../../Hooks/HttpRequests';
 
 export default function Products() {
 
-    const url = `https://reqres.in/api/users`;
+    const url = `https://jsonplaceholder.typicode.com/photos`;
+    // const url = `https://reqres.in/api/users`;
     
     let products = HttpRequests(url)
     
@@ -16,9 +17,9 @@ export default function Products() {
 
     return (
         <div>
-            <h1>Products</h1>
+            <h1 className="text-center font-sans font-bold text-xl mx-3 px-6">Products</h1>
 
-            <div className="flex w-full">
+            <div className="flex flex-wrap w-full">
                 { content }
             </div>
         </div>
