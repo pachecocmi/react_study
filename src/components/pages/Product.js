@@ -11,8 +11,6 @@ export default function Product() {
 
     let product = HttpRequests(url)
 
-    console.log(product.data);
-    
     let productInfo = product.error ? <div><p>Something Unexpected has Occured.</p></div> : <Loader />
     if( product.data??true == false ) 
         productInfo = <div className="text-center">
