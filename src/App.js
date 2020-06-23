@@ -22,10 +22,10 @@ export default function App() {
             <Route path="/about">
               <About />
             </Route>
-            <Route path="/products">
+            <Route exact path="/products">
               <Products />
             </Route>
-            <Route path="/product/:id">
+            <Route path="/products/:id">
               <Product />
             </Route>
           </Switch>

@@ -5,9 +5,9 @@ export default function NavLink(props) {
     // let isActive = this.context.router.route.location.pathname === this.props.to;
     // let className = isActive ? 'active' : '';
     let params = props.params;
-    let location = useLocation().pathname;
+    let location = '/'+useLocation().pathname.split('/')[1]
     let activeNav = `font-bold border-blue-500 ${props.isMobile?"border-r-4":"border-b-2"}`
-    
+    console.log(location);
     return <Link to={params.link} 
         className={`${props.className} ${params.link==location?activeNav:""}`}
         onClick={props.closeMenu}
