@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import Loader from '../Loader'
+import Loader from '../scaffold/Loader'
 import ProductCard from './ProductCard';
 import HttpRequests from '../../Hooks/HttpRequests';
 

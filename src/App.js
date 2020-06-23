@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from './components/scaffold/Header'
+import Footer from './components/scaffold/Footer'
 import About from './components/pages/About'
 import Home from './components/pages/Home'
 import Product from './components/pages/Product'
@@ -25,7 +25,7 @@ export default function App() {
             <Route path="/products">
               <Products />
             </Route>
-            <Route path="/product/:id">
+            <Route path="/products/:id">
               <Product />
             </Route>
           </Switch>

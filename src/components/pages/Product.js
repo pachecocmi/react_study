@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-import Loader from '../Loader'
+import Loader from '../scaffold/Loader'
 import HttpRequests from '../../Hooks/HttpRequests';
 
 export default function Product() {
@@ -14,8 +14,8 @@ export default function Product() {
     let productInfo = product.error ? <div><p>Something Unexpected has Occured.</p></div> : <Loader />
     if( product.data ) 
         productInfo = <div>
-            <div><img src={product.data.avatar} alt={product.data.avatar} /></div>
-            <div>{product.data.first_name} {product.data.last_name}</div>
+            <div><img src={ product.data.avatar } alt={ product.data.avatar } /></div>
+            <div>{ product.data.first_name } { product.data.last_name }</div>
             <div>{ product.data.email }</div>
         </div>
 
